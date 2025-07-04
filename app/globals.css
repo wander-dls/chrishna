@@ -56,6 +56,7 @@
   --primary-foreground: oklch(0.969 0.015 12.422);
   --secondary: oklch(0.967 0.001 286.375);
   --secondary-foreground: oklch(0.21 0.006 285.885);
+  --tertiary: oklch(327 64% 97%);
   --muted: oklch(0.967 0.001 286.375);
   --muted-foreground: oklch(0.552 0.016 285.938);
   --accent: oklch(0.967 0.001 286.375);
@@ -80,16 +81,17 @@
 }
 
 .dark {
-  --background: oklch(0.141 0.005 285.823);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.21 0.006 285.885);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.21 0.006 285.885);
-  --popover-foreground: oklch(0.985 0 0);
+  --background: oklch(237 22% 20%);
+  --foreground: oklch(210 20% 98%);
+  --card: oklch(240 19% 16%);
+  --card-foreground: oklch(210 20% 98%);
+  --popover: oklch(20 14.3% 4.1%);
+  --popover-foreground: oklch(210 20% 98%);
   --primary: oklch(0.645 0.246 16.439);
-  --primary-foreground: oklch(0.969 0.015 12.422);
-  --secondary: oklch(0.274 0.006 286.033);
-  --secondary-foreground: oklch(0.985 0 0);
+  --primary-foreground: oklch(210 20% 98%);
+  --tertiary: oklch(327 64% 97%);
+  --secondary: oklch(240 19% 16%);
+  --secondary-foreground: oklch(210 20% 98%);
   --muted: oklch(0.274 0.006 286.033);
   --muted-foreground: oklch(0.705 0.015 286.067);
   --accent: oklch(0.274 0.006 286.033);
@@ -117,11 +119,38 @@
 body {
   font-family: var(--font-roboto);
 }
-/* @layer base {
+@layer base {
   * {
     @apply border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;
   }
-} */
+}
+
+.h1 {
+  @apply text-6xl xl:text-[72px] xl:leading-[80px] tracking-[-2px] font-bold;
+}
+
+.h2 {
+  @apply text-4xl font-bold;
+}
+
+.h3 {
+  @apply text-3xl font-bold;
+}
+.h4 {
+  @apply text-[22px] font-semibold;
+}
+
+.subtitle {
+  @apply text-muted-foreground text-lg mb-8 font-light;
+}
+
+.section-title {
+  @apply text-4xl text-primary font-bold relative w-max flex items-center justify-between gap-y-3;
+}
+
+.badge {
+  @apply z-10 w-[250px] px-16 h-[98px] bg-primary dark:backdrop-blur-[44px] shadow-2xl p-4 rounded-full items-center flex gap-x-4
+}
